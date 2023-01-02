@@ -155,6 +155,7 @@ public class Hunspell {
 		// Annoying that Java doesn't have consistent names for the arch types:
 		boolean x86  = arch.equals("x86")    || arch.equals("i386")  || arch.equals("i686");
 		boolean amd64= arch.equals("x86_64") || arch.equals("amd64") || arch.equals("ia64n");
+		boolean aarch64 = arch.equals("aarch64") || arch.equals("arm64");
 
 		if (os.startsWith("windows")) {
 			if (x86) {
@@ -171,6 +172,9 @@ public class Hunspell {
 			if (amd64) {
 				return "hunspell-darwin-x86-64";
 			}
+			if(aarch64) {
+				return "hunspell-darwin-aarch64";
+			}
 			if (arch.equals("ppc")) {
 				return "hunspell-darwin-ppc-32";
 			}
@@ -182,7 +186,9 @@ public class Hunspell {
 			if (amd64) {
 				return "hunspell-linux-x86-64";
 			}
-
+			if (aarch64) {
+				return "hunspell-linux-aarch64";
+			}
 		} else if (os.startsWith("sunos")) {
 			//if (arch.equals("sparc")) {
 			//	return "hunspell-sunos-sparc-64";

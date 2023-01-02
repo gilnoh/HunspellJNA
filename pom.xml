@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!--
- $Id: d091ac5d0bd73bc1988c76af8a060f46e3da0b5a $
+ $Id$
 
  vim:ai noci noet nopi sts=8 sw=8 ts=8:
  -->
@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>dk.dren</groupId>
 	<artifactId>hunspell</artifactId>
-	<version>1.6.2-SNAPSHOT</version>
+	<version>1.7.1-SNAPSHOT</version>
 	<name>HunspellJNA</name>
 	<description>Hunspell library for Java based on JNA</description>
 	<url>http://dren.dk/hunspell.html</url>
@@ -146,7 +146,7 @@
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna</artifactId>
-            <version>4.5.0</version>
+            <version>5.12.1</version>
         </dependency>
 		<dependency>
 			<groupId>junit</groupId>
