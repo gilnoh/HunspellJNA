@@ -1,6 +1,24 @@
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 
-# JNA based Java API for Hunspell
+
+# What is this fork?
+- HunspellJNA is nice tool, but main fork is outdated and do not support ARM64 (aarch64): e.g. no native binaries for M1 mac, or AWS Graviton instances. 
+- This fork includes those pre-built aarch64 binaries in /native-lib, and updated JNA dependencies. So you can build maven artifact Jar that runs okay in aarch64 systems.  
+- More specifically, the followings have been changed 
+  - added pre-built aarch64 binary for Darwin (From Hunspell 1.7 - from Homebrew pre-built cask) 
+  - added pre-built aarch64 binary for Linux (From Hunspell 1.6.2 - from Debian ARM64 package)
+  - HunspellJNA java code updated to recognize and load correct aarch64 libraries
+  - Updated some required dependencies (e.g. JNA to latest version, so aarch64 loading works okay)  
+- building a maven package from this branch will produce a fully working JAR including the following systems 
+  - M1 macs, native aarch64 java 
+  - AWS graviton instances (e.g. m6g instances or equivalents)
+  - (and all other platforms worked before) 
+- WARNING
+  - The changes that we made here is really minimal, and we do not expect this to be merged on upstream as-is. 
+  - For example, native lib build script has NOT been updated; only pre-built binaries have been added for your / our convenience. 
+
+
+# (ORIGINAL DOCUMENTATION) --- JNA based Java API for Hunspell
 
 This package contains the JNA based Java bindings for the Hunspell, see:
 https://github.com/twall/jna and http://hunspell.sourceforge.net/ for details
